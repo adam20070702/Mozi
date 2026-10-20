@@ -1,0 +1,21 @@
+﻿<Window x:Class="Mozi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mozi"
+        mc:Ignorable="d"
+        Title="Mozi" Height="1080" Width="1920">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Border Background="Black" Height="4" Width="1200" HorizontalAlignment="Center" Margin="5"/>
+            <Label Content="VÁSZON" HorizontalAlignment="Center" FontSize="24" Margin="5"/>
+            <StackPanel x:Name="Terem" Orientation="Vertical" HorizontalAlignment="Center"/>
+            <Label x:Name="Info" Content="Kijelölt székek: 0 db, 0 Ft" HorizontalAlignment="Center" FontSize="18" Margin="10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="foglalás" Click="Foglalas_Click" Width="120" Height="40" Margin="5"/>
+                <Button Content="új foglalás" Click="Reset_Click" Width="120" Height="40" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

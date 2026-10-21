@@ -10,6 +10,7 @@
         <StackPanel HorizontalAlignment="Center">
             <Border Background="Black" Height="4" Width="1200" HorizontalAlignment="Center" Margin="5"/>
             <Label Content="VÁSZON" HorizontalAlignment="Center" FontSize="24" Margin="5"/>
+            <Label x:Name="Szabad" HorizontalAlignment="Center" FontSize="18"/>
             <StackPanel x:Name="Terem" Orientation="Vertical" HorizontalAlignment="Center"/>
             <Label x:Name="Info" Content="Kijelölt székek: 0 db, 0 Ft" HorizontalAlignment="Center" FontSize="18" Margin="10"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

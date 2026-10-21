@@ -28,7 +28,7 @@ namespace Mozi
         {
             InitializeComponent();
             TeremKeszites();
-
+            Frissit();
         }
         private void TeremKeszites()
         {
@@ -54,14 +54,20 @@ namespace Mozi
         private void Frissit()
         {
             int db = 0;
+            int szabad = 0;
             foreach (Szek sz in szekek)
             {
                 if (sz.Kijelolt)
                 {
                     db++;
                 }
-                Info.Content = "Kijelölt székek: " + db + "db, " + (db * Ar) + "Ft";
+                if (!sz.Foglalt)
+                {
+                    szabad++;
+                }
             }
+            Info.Content = "Kijelölt székek: " + db + " db, " + (db * Ar) + " Ft";
+            Szabad.Content = "Szabad helyek: " + szabad + " db";
         }
         private void Foglalas_Click(object sender, RoutedEventArgs e)
         {
@@ -76,15 +82,18 @@ namespace Mozi
                     db++;
                 }
             }
-            int szabadszekek;
             if (db > 0)
             {
+                int szabadszekek = 0;
                 foreach (Szek sz in szekek)
                 {
+                    if (!sz.Foglalt)
+                    {
+                        szabadszekek++;
+                    }
                 }
-                uzenet += "\nÖsszesen: " + db + " szék, " + (db * Ar) + " Ft" + "Szabad székek száma: ";
+                uzenet += "\nÖsszesen: " + db + " szék, " + (db * Ar) + " Ft\nSzabad székek száma: " + szabadszekek;
                 MessageBox.Show(uzenet, "Sikeres foglalás");
-
             }
             Frissit();
         }
